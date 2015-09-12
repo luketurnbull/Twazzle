@@ -1,0 +1,15 @@
+-- Create Asset Addresses Table
+
+CREATE TABLE Asset.Address
+(
+	ID INT NOT NULL,
+	AssetID INT NOT NULL,
+	Line_One VARCHAR(255) NOT NULL,
+	Line_Two VARCHAR(255) NULL,
+	City VARCHAR(255) NOT NULL,
+	County VARCHAR(255) NOT NULL,
+	Postcode VARCHAR(12) NOT NULL
+	CONSTRAINT pk_AddressID PRIMARY KEY (ID),
+	CONSTRAINT fk_AssetID FOREIGN KEY (AssetID)
+	REFERENCES Asset.Main(ID)
+)
